@@ -1,0 +1,148 @@
+<img
+  class="header-icon"
+  src="assets/icon.jpg"
+  alt="blog icon"
+  width="500"
+  height="333"
+/>
+<div class="nav-bar">
+  <ul>
+    <li id="home">
+      <a href="#" (click)="showdetails()"
+        ><i class="fa fa-fw fa-home"></i>HOME</a
+      >
+    </li>
+    <li><a href="#" (click)="showForm()">+ADD</a></li>
+  </ul>
+</div>
+<h3 class="contact">Contacts</h3>
+<div id="total-page-allignment">
+  <div class="user-details" *ngIf="showdetailsleft">
+    <div id="userListItems" *ngFor="let employee of employees">
+      <div class="user-list-item" (click)="userlistitem(employee)">
+        <!-- Display the employee name in the list -->
+        <span id="id">{{ employee.id }}</span> 
+        <span class="left-name">{{ employee.name }}</span> <br />
+        <span class="left-email">{{ employee.email }}</span> <br />
+        <span class="left-mobile">{{ employee.mobile }}</span>
+      </div>
+    </div>
+  </div>
+    <div id="userDetailsContent">
+      <div id="userDetails">
+      <div  *ngIf="editdelete" class="edit-delete-alignment">
+        <span class="editData" (click)="selectedEmployee && editEmployee(selectedEmployee)">
+          <img
+            src="assets/edit1.jpg"
+            alt="edit"
+            class="edit"
+            id="data-id"
+          /> <span class="edit-form-data">EDIT</span></span
+        >
+      <span class="deleteData" (click)="deleteSelectedEmployee()">
+        <img
+          src="assets/delete1.png"
+          alt="delete"
+          class="delete"
+        /><span class="delete-form-data">DELETE</span></span>
+    </div>
+      <div class="user-details" *ngIf="showdetailsright" id="rightside-padding">
+        <!-- Use the selectedEmployee to display individual user details -->
+        <span id="id">{{ selectedEmployee?.id }}</span>
+        <span class="rightside-name">
+          {{ selectedEmployee?.name }}
+        </span>
+        <span class="rightside-email">
+          Email : {{ selectedEmployee?.email }}
+        </span>
+        <span class="rightside-fontsize">
+          Mobile : {{ selectedEmployee?.mobile }}
+        </span>
+        <span class="rightside-fontsize">
+          Landline : {{ selectedEmployee?.landline }}
+        </span>
+        <span class="rightside-website">
+          Website : {{ selectedEmployee?.website }}
+        </span>
+        <span class="rightside-Address"> Address :
+          {{ selectedEmployee?.address }}
+        </span>
+      </div>
+    </div>
+  </div>
+<div class="form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="showform" class="form-alignment">
+    <div>
+      <label for="name">Name</label>
+      <div>
+        <input type="text" id="name" formControlName="name"  class="input"/>
+    <span *ngIf="form.get('name')?.touched && form.get('name')?.invalid" class="error">
+      <span *ngIf="form.get('name')?.hasError('required')" class="error">Name is required.</span>
+      <span *ngIf="form.get('name')?.hasError('pattern')">numbers are not allowed.</span>
+      <span *ngIf="form.get('name')?.hasError('minlength')" class="error">Name must be at least 3 characters long.</span>
+    </span>
+      </div>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <div>
+        <input type="email" id="email" formControlName="email"  class="input"/>
+    <span *ngIf="form.get('email')?.touched && form.get('email')?.invalid" class="error">
+      <span *ngIf="form.get('email')?.hasError('required')">Email is required.</span>
+      <span *ngIf="form.get('email')?.hasError('pattern')">Invalid email format.</span>
+      <!-- <span *ngIf="form.get('email')?.hasError('email')">Invalid email format.</span> -->
+    </span>
+      </div>
+    </div>
+    <div class="left">
+      <label for="mobile">Mobile</label>
+      <div>
+        <input type="number" id="mobile"  formControlName="mobile" class="input"/>
+        <span *ngIf="form.get('mobile')?.touched && form.get('mobile')?.invalid" class="error">
+          <span *ngIf="form.get('mobile')?.hasError('required')">Mobile is required.</span>
+          <span *ngIf="form.get('mobile')?.hasError('pattern')">Invalid mobile number.</span>
+        </span>
+    </div>
+    </div>
+    <div class="left">
+      <label for="landline" id="landAdj">Landline</label>
+      <div>
+        <input type="number" id="landline" formControlName="landline" class="input" />
+        <span *ngIf="form.get('landline')?.touched && form.get('landline')?.invalid" class="error">
+          <span *ngIf="form.get('landline')?.hasError('required')">Landline is required.</span>
+          <span *ngIf="form.get('landline')?.hasError('pattern')">Invalid Landline number.</span>
+        </span>
+      </div>
+    </div>
+    <div>
+      <label for="website">Website</label>
+      <div>
+        <input id="website" formControlName="website"  class="input"/>
+    <span *ngIf="form.get('website')?.touched && form.get('website')?.invalid" class="error">
+      <span *ngIf="form.get('website')?.hasError('required')">website is required.</span>
+      <span *ngIf="form.get('website')?.hasError('pattern')">Invalid website.</span>
+    </span>
+      </div>
+    </div>
+    <div>
+      <label for="address">Address</label>
+      <div>
+        <textarea
+          type="text"
+          id="address"
+          cols="3"
+          rows="3"
+          formControlName="address"  class="input"
+        ></textarea>
+        <span *ngIf="form.get('address')?.touched && form.get('address')?.invalid" class="error">
+          <span *ngIf="form.get('address')?.hasError('required')">Address is required.</span>
+        </span>
+      </div>
+    </div>
+  <div> </div>
+    <div class="addButton">
+      <button   [disabled]="form.invalid" (click)="addSubmit()"  id="addSubmit" type="submit" *ngIf="add">Add</button>
+      <button [disabled]="form.invalid"  (click)="updateEmployeeData()" id="update" type="button" *ngIf="update">Update</button>
+    </div>
+  </form>
+</div>

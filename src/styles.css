@@ -1,0 +1,224 @@
+body {
+  margin: auto;
+  padding: 0px;
+}
+
+header {
+  background-color: #3796c9;
+  height: 60px;
+  color: white;
+  font-family: system-ui;
+  font-size: 50.6px;
+  padding: 24px;
+}
+.header-icon{
+  width: 24px;
+  height: 24px;
+  float: right;
+  padding-right: 19px;
+  margin-top: 7px;
+  margin-right: 19px;
+}
+.nav-bar {
+  background-color: #333333;
+  margin: auto;
+  padding: 0px;
+}
+
+
+ul {
+  overflow: hidden;
+  font-family: system-ui;
+  font-weight: 600;
+  margin: auto;
+  font-size: 15px;
+  padding-left: 13px;
+}
+
+li {
+  overflow: hidden;
+  float: left;
+}
+
+li a {
+  text-decoration: none;
+  padding: 10px;
+  color: whitesmoke;
+  display: flex;
+}
+
+.contact {
+  font-family: system-ui;
+  padding-left : 8px;
+  font-size: 16px;
+}
+#total-page-allignment {
+  display: flex;
+  padding-left: 18px;
+}
+#userListItems {
+  flex: 1;
+}
+.user-list-item:hover {
+  background-color: skyblue;
+}
+.user-list-item .active  {
+  background-color: skyblue;
+}
+.user-list-item  {
+  width:361px;
+  border: 1px solid #cccccc;
+  padding-left:14px;
+  padding-bottom:7px;
+  padding-top:4px;
+  font-family:  system-ui;
+}
+.left-name{
+font-size: 25px;
+}
+.left-email{
+font-size: 14px;
+}
+.left-mobile{
+font-size: 14px;
+}
+
+.dataid {
+  visibility: hidden;
+}
+.error{
+  color : red;
+  font-size: 14px;
+  padding-left:8px;
+}
+/* .edit-delete-alignment{
+
+} */
+.editData {
+  font-family:system-ui;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.edit {
+  height: 15px;
+  margin-right: 3px;
+ 
+}
+.deleteData {
+  padding-left: 25px;
+  font-family:system-ui;
+ 
+  font-size: 13px;
+  font-weight: 600;
+}
+.delete {
+  height: 20px;
+  margin-right: 5px;
+  padding-left: 25px;
+}
+#userDetailsContent {
+  font-family:system-ui;
+  padding-left: 30px;
+  padding-right: 24px;
+}
+#userDetails{
+  position:relative; 
+  left: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+#id {
+  display: none;
+}
+
+#rightside-padding{
+  padding-left:24px;
+  display: grid;
+}
+.rightside-name{
+  font-size:30px;
+  padding-bottom : 20px;
+  padding-right :10px;
+}
+.rightside-email {
+  padding-bottom : 20px;
+  font-size:16px;
+}
+.rightside-fontsize{
+  font-size:16px;
+  
+}
+.rightside-website {
+  font-size:16px;
+  padding-bottom : 20px;
+  padding-top:15px;
+}
+.rightside-Address{
+  font-size:16px;
+  width :404px;
+}
+.edit-form-data:hover {
+  background-color: skyblue;
+}
+
+.delete-form-data:hover {
+  background-color: skyblue;
+  
+}
+
+.form {
+  display: flex;
+    flex-direction: row;
+    padding-left:24px;
+}
+.form-alignment{
+  padding-left:24px;
+}
+label{
+  font-size:12px;
+  font-family:system-ui;
+  font-weight:bold;
+}
+.input {
+  font-family: system-ui;
+  padding-bottom: 12px;
+  margin-bottom: 5px;
+  width: 385px;
+}
+
+textarea {
+  font-family: system-ui;
+  padding-bottom: 12px;
+  margin-bottom: 5px;
+  width: 385px;
+}
+
+.addButton {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  width :500px;
+}
+
+#addSubmit {
+  background-color: rgb(23, 135, 23);
+  width: 101px;
+  height: 30px;
+  border-color: white;
+  color: white;
+}
+#update {
+  background-color: rgb(23, 135, 23);
+  width: 101px;
+  height: 30px;
+  border-color: white;
+  color: white;
+}
+
+#userListItems {
+  flex: 1;
+}
+
+
+ 
